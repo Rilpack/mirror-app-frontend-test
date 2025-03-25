@@ -1,0 +1,26 @@
+@use '@/styles/global' as *;
+
+.button {
+  background-color: $primary-color;
+  border: none;
+  border-radius: 8px;
+  padding-inline: 12px;
+  padding-block: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: $text-color;
+
+  width: 100%;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-hover-color;
+    transition: 0.1s linear;
+  }
+
+  &:active {
+    background-color: $primary-active-color;
+    transition: 0.1s linear;
+  }
+}
