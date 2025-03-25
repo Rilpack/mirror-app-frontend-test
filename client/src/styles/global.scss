@@ -5,8 +5,14 @@
 }
 
 $main-font: 'Inter', sans-serif;
-$primary-color: #511ed90a;
 $background-color: #f5f5f5;
+
+$primary-color: #511ed90a;
+$primary-hover-color: #501ed929;
+$primary-active-color: #501ed937;
+
+$border-color: #04000d14;
+$text-color: #04000dcc;
 
 body {
   font-family: $main-font;
