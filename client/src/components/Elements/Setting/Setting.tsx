@@ -1,10 +1,10 @@
 import styles from './Setting.module.scss'
 
-export const Setting = () => {
+export const Setting = ({ title, value }: { title: string, value: string | number }) => {
   return (
     <div className={styles.setting}>
-      <b>Title</b>
-      <span>Text text text text text text text</span>
+      <b>{title}</b>
+      <span>{value}</span>
     </div>
   )
 }
