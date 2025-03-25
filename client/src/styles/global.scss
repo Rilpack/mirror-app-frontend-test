@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$main-font: 'Inter', sans-serif;
+$primary-color: #511ed90a;
+$background-color: #f5f5f5;
+
+body {
+  font-family: $main-font;
+  background-color: $background-color;
+  color: #333;
+}
