@@ -3,7 +3,7 @@ import { Button } from '@/components/Elements/Button/Button'
 import { Setting } from '@/components/Elements/Setting/Setting'
 import { Settings } from '@/typescript/interfaces'
 
-export const Sidebar = ({ settings, fetchSettings }: { settings: Settings | null, fetchSettings: () => Promise<void> }) => {
+export const Sidebar = ({ settings, refetch }: { settings: Settings | null, refetch: () => Promise<void> }) => {
 
   // Трансформация объекта настроек в массив с переводом
   const transformSettings = () => {
@@ -43,7 +43,7 @@ export const Sidebar = ({ settings, fetchSettings }: { settings: Settings | null
 
   return (
     <div className={styles.container}>
-      <Button onClick={fetchSettings} title='Обновить' />
+      <Button onClick={refetch} title='Обновить' />
       <div className={styles.container_settings}>
         {transformSettings().map((setting, index) => (
           <div key={index} className={styles.container_settings_section}>

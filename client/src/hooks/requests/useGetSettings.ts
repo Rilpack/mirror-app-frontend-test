@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getSettings } from '@/api/settings/index';
 import { Settings } from '@/typescript/interfaces';
 
-export const useSettings = () => {
-  const [settings, setSettings] = useState<Settings | null>(null);
+export const useSettings = ({
+  setSettings,
+}: {
+  setSettings: React.Dispatch<React.SetStateAction<Settings | null>>;
+}) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -18,9 +21,5 @@ export const useSettings = () => {
     }
   };
 
-  useEffect(() => {
-    fetchSettings();
-  }, []);
-
-  return { settings, loading, error, fetchSettings };
+  return { loading, error, fetchSettings };
 };
