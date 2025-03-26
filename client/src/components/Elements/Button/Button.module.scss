@@ -9,18 +9,17 @@
   font-size: 14px;
   font-weight: 600;
   color: $text-color;
-
   width: 100%;
 
   cursor: pointer;
 
+  transition: all 0.15s linear;
+
   &:hover {
     background-color: $primary-hover-color;
-    transition: 0.1s linear;
   }
 
   &:active {
     background-color: $primary-active-color;
-    transition: 0.1s linear;
   }
 }
