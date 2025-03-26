@@ -2,15 +2,18 @@ import styles from './Card.module.scss'
 import likeIcon from '@/assets/svg/like.svg'
 import commentIcon from '@/assets/svg/comment.svg'
 import { Post } from '@/typescript/interfaces'
+import { useFormatDate } from '@/hooks/useFormatDate'
 
 export const Card = ({ post }: { post: Post }) => {
+  const formatDate = useFormatDate(post.date);
+
   return (
     <div className={styles.card}>
       <p className={styles.card_title}>{post.caption}</p>
       <div className={styles.card_bottom}>
         <div className={styles.card_bottom_user}>
           <b>{post.user.username}</b>
-          <span>{post.date}</span>
+          <span>{formatDate}</span>
         </div>
         <div className={styles.card_bottom_stats}>
           <div className={styles.card_bottom_stats_section}>
