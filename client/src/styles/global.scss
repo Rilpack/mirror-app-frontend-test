@@ -17,5 +17,5 @@ $text-color: #04000dcc;
 body {
   font-family: $main-font;
   background-color: $background-color;
-  color: #333;
+  color: $text-color;
 }
