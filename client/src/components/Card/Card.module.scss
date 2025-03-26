@@ -2,13 +2,16 @@
 
 .card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   border: 1px solid $border-color;
   border-radius: 8px;
   gap: 12px;
   padding: 6px;
+  width: 100%;
+
+  user-select: none;
 
   &_title {
     font-size: 16px;

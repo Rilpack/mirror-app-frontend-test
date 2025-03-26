@@ -1,1 +1,26 @@
 @use '@/styles/global' as *;
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px;
+  overflow-y: auto;
+
+  &_content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+}
