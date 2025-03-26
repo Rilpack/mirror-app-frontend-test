@@ -1,6 +1,6 @@
 import styles from './Sidebar.module.scss'
 import { Button } from '@/components/Elements/Button/Button'
-import { Setting } from '../Elements/Setting/Setting'
+import { Setting } from '@/components/Elements/Setting/Setting'
 import { Settings } from '@/typescript/interfaces'
 
 export const Sidebar = ({ settings, fetchSettings }: { settings: Settings | null, fetchSettings: () => Promise<void> }) => {
