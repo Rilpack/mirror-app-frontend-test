@@ -1,0 +1,66 @@
+@use '@/styles/global' as *;
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  gap: 12px;
+  padding: 6px;
+
+  &_title {
+    font-size: 16px;
+  }
+
+  &_bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    gap: 16px;
+
+    &_user {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+
+      b {
+        font-size: 14px;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    &_stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      gap: 6px;
+
+      &_section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 4px;
+
+        p {
+          font-size: 14px;
+        }
+
+        img {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+}
