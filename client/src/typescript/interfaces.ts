@@ -8,3 +8,20 @@ export interface Settings {
   template: Template;
   navigation: Navigation;
 }
+
+export interface Post {
+  id: string;
+  caption: string;
+  permalink: string;
+  date: string;
+  likes: number;
+  comments: number;
+  userId: string;
+  user: User;
+}
+
+export interface User {
+  id: string;
+  username: string;
+  postId: string;
+}
