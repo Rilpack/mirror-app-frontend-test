@@ -1,6 +1,7 @@
 @use '@/styles/global' as *;
 
-.card {
+.card,
+.card_hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -65,5 +66,13 @@
         }
       }
     }
+  }
+}
+
+.card_hover {
+  transition: all 0.15s linear;
+
+  &:hover {
+    background-color: $primary-color;
   }
 }

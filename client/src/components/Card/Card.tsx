@@ -3,12 +3,14 @@ import likeIcon from '@/assets/svg/like.svg'
 import commentIcon from '@/assets/svg/comment.svg'
 import { Post } from '@/typescript/interfaces'
 import { useFormatDate } from '@/hooks/useFormatDate'
+import { useContextProvider } from '@/app'
 
 export const Card = ({ post }: { post: Post }) => {
+  const { settings } = useContextProvider()
   const formatDate = useFormatDate(post.date);
 
   return (
-    <div className={styles.card}>
+    <div className={settings?.template === "hover" ? styles.card_hover : styles.card}>
       <p className={styles.card_title}>{post.caption}</p>
       <div className={styles.card_bottom}>
         <div className={styles.card_bottom_user}>
@@ -26,6 +28,6 @@ export const Card = ({ post }: { post: Post }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
