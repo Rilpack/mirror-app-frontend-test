@@ -1,7 +1,7 @@
-type Layout = 'grid' | 'masonry' | 'any';
+type Layout = 'grid' | 'masonry' | 'other';
 type LayoutElement = 'columns' | 'rows';
-type Template = 'classic' | 'hover';
-type Navigation = 'load-more' | 'pagination';
+type Template = 'classic' | 'hover' | 'other';
+type Navigation = 'load-more' | 'pagination' | 'other';
 
 type LayoutConfig = Record<LayoutElement, number>;
 type LayoutParams = Record<Layout, LayoutConfig>;
