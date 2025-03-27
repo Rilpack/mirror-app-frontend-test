@@ -9,7 +9,6 @@ import { Settings } from "./typescript/interfaces"
 const Context = createContext<{
   settings: Settings | null
   loading: boolean
-  error: any
   refetch: () => Promise<void>
 } | null>(null)
 
@@ -22,7 +21,7 @@ export const useContextProvider = () => {
 const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [settings, setSettings] = useState<Settings | null>(null);
 
-  const { fetchSettings, loading, error } = useSettings({ setSettings: setSettings })
+  const { fetchSettings, loading } = useSettings({ setSettings: setSettings })
 
   useEffect(() => {
     fetchSettings();
@@ -33,7 +32,6 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
       value={{
         settings,
         loading,
-        error,
         refetch: fetchSettings,
       }}
     >

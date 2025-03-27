@@ -7,9 +7,10 @@ export const useSettings = ({
 }: {
   setSettings: React.Dispatch<React.SetStateAction<Settings | null>>;
 }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const fetchSettings = async () => {
+    setLoading(true);
     try {
       const data = await getSettings();
       setSettings(data);
@@ -24,5 +25,5 @@ export const useSettings = ({
     }
   };
 
-  return { loading, fetchSettings };
+  return { fetchSettings, loading };
 };

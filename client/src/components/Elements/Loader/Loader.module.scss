@@ -1,0 +1,19 @@
+@use '@/styles/global' as *;
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid $primary-active-color;
+  border-radius: 50%;
+  min-width: 40px;
+  min-height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

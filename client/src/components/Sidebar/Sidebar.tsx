@@ -1,9 +1,11 @@
 import styles from './Sidebar.module.scss'
 import { Button } from '@/components/Elements/Button/Button'
 import { Setting } from '@/components/Elements/Setting/Setting'
-import { Settings } from '@/typescript/interfaces'
+import { Loader } from '../Elements/Loader/Loader'
+import { useContextProvider } from '@/app'
 
-export const Sidebar = ({ settings, refetch }: { settings: Settings | null, refetch: () => Promise<void> }) => {
+export const Sidebar = () => {
+  const { settings, loading, refetch } = useContextProvider()
 
   // Трансформация объекта настроек в массив с переводом
   const transformSettings = () => {
@@ -44,14 +46,17 @@ export const Sidebar = ({ settings, refetch }: { settings: Settings | null, refe
   return (
     <div className={styles.container}>
       <Button onClick={refetch} title='Обновить' />
-      <div className={styles.container_settings}>
-        {transformSettings().map((setting, index) => (
-          <div key={index} className={styles.container_settings_section}>
-            <Setting title={setting.title} value={setting.value} />
-            {transformSettings().length - 1 !== index && <div className={styles.line} />}
-          </div>
-        ))}
-      </div>
+      {loading && <Loader />}
+      {!loading &&
+        <div className={styles.container_settings}>
+          {transformSettings().map((setting, index) => (
+            <div key={index} className={styles.container_settings_section}>
+              <Setting title={setting.title} value={setting.value} />
+              {transformSettings().length - 1 !== index && <div className={styles.line} />}
+            </div>
+          ))}
+        </div>
+      }
     </div>
   )
 }

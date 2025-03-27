@@ -6,6 +6,7 @@ import { Pagination } from '@/components/Pagination/Pagination'
 import { Post } from '@/typescript/interfaces'
 import { Masonry } from '@/components/Layouts/Masonry/Masonry'
 import { Grid } from '@/components/Layouts/Grid/Grid'
+import { Loader } from '@/components/Elements/Loader/Loader'
 
 export const HomePage = () => {
   const { settings } = useContextProvider()
@@ -17,7 +18,7 @@ export const HomePage = () => {
   const limit = columns * rows;
   const pageCount = Math.ceil(100 / limit);
 
-  const { fetchPosts } = usePosts();
+  const { fetchPosts, loading } = usePosts();
 
   const columnsData = Array.from({ length: columns }, () => [] as Post[]);
 
@@ -67,6 +68,7 @@ export const HomePage = () => {
           : <Masonry columnsData={columnsData} />
         }
       </div>
+      {loading && <Loader />}
       {posts.length !== 100 &&
         <Pagination
           pageCount={pageCount}
