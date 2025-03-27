@@ -39,8 +39,6 @@ export const HomePage = () => {
       } else {
         console.log('Неизвестная ошибка при загрузке постов');
       }
-    } finally {
-      console.log('')
     }
   };
 
