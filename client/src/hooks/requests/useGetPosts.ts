@@ -10,8 +10,12 @@ export const usePosts = () => {
         _expand: 'user',
       });
       return data as Post[];
-    } catch (err: any) {
-      throw new Error(err.message || 'Ошибка при загрузке постов');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        throw new Error(err.message);
+      } else {
+        throw new Error('Неизвестная ошибка при загрузке постов');
+      }
     }
   };
 
