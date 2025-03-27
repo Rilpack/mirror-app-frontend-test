@@ -5,11 +5,12 @@ import { useContextProvider } from '@/app'
 
 interface IPagination {
   pageCount: number,
+  page: number,
   handleFetchPostsMore: () => void
   handlePageClick: (event: { selected: number; }) => void
 }
 
-export const Pagination = ({ pageCount, handleFetchPostsMore, handlePageClick }: IPagination) => {
+export const Pagination = ({ pageCount, page, handleFetchPostsMore, handlePageClick }: IPagination) => {
   const { settings } = useContextProvider()
 
   return (
@@ -17,6 +18,7 @@ export const Pagination = ({ pageCount, handleFetchPostsMore, handlePageClick }:
       {settings?.navigation === 'load-more'
         ? <Button title='Загрузить ещё' onClick={handleFetchPostsMore} />
         : <ReactPaginate
+          forcePage={page}
           containerClassName={styles.pagination}
           activeClassName={styles.pagination_active}
           pageCount={pageCount}

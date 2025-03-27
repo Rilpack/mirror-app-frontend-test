@@ -69,6 +69,7 @@ export const HomePage = () => {
       {loading && <Loader />}
       {posts.length !== 100 &&
         <Pagination
+          page={page - 1}
           pageCount={pageCount}
           handleFetchPostsMore={handleFetchPostsMore}
           handlePageClick={handlePageClick} />}
